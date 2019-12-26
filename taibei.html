@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>城市详情</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+</head>
+<style>
+ .city-in{
+            border: none;
+            border-color: red;
+            margin-left: 16.9%;
+            margin-right: 16.9%;
+            overflow: auto;
+            zoom: 1;
+            height: 220px;
+            outline-width:1px;
+            outline-style:solid; 
+            outline-color: white;
+            background-color: #8e9eab;
+            background: linear-gradient(to left, #cccccc, white);
+            font-size:10px;
+        }
+        .linecity{
+            border: none;
+            height: 149px;
+            margin-left: 1px;
+            width: 15%;
+            float: left;
+            margin-top: 1px;
+        }
+        .linecity1{
+            border: none;
+            height: 149px;
+            margin-left: 1px;
+            width: 18%;
+            float: left;
+            margin-top: 1px;
+        }
+        .linecity2{
+            border: none;
+            height: 149px;
+            margin-left: 1px;
+            width: 13%;
+            float: left;
+            margin-top: 1px;
+        }
+        .chk1{
+                display: none;
+            }
+        .chk1:checked + label{
+                color: red;
+            }
+        .chk1:checked + label:after{
+                color: black;
+            }
+        .chk2{
+                display: none;
+            }
+        .chk2:checked + label{
+                color: red;
+            }
+        .chk2:checked + label:after{
+                color: black;
+            }
+        .roadcity{
+            height: 40px;
+            line-height: 40px;
+            width: 99.9%;
+            float: left;
+            margin-top: 1px;
+            }
+        .citybegin{
+            height: 40px;
+            margin-right: 1px;
+            outline-width:1px;
+            }
+        select, .selectXiala{
+            /*select的宽高要等于div的宽高*/
+            width: 150px;
+            height: 28px;
+            line-height: 28px;
+            margin: 0 15px;
+        }
+        select{
+            /*清除select的边框样式*/
+            /*清除select聚焦时候的边框颜色*/
+            border:1px;
+            border-color: black;
+            /*隐藏select的下拉图标*/
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-left: 10px;
+            background: none;
+        }
+        .selectXiala{
+            display: inline-block;
+            font-size: 12px;
+            position: relative;
+        }
+        /*使用伪类给select添加自己想用的图标*/
+        .selectXiala:after{
+            content: "";
+            width: 18px;
+            height: 18px;
+            background-color: #be4f48;
+            background-image: url(task_images/xiala.png);
+            background-repeat: no-repeat;
+            background-size: 16px 16px;
+            background-position: right center;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            /*给自定义的图标实现点击下拉功能*/
+            /*pointer-events: none;鼠标事件拜拜的意思。元素应用了该CSS属性，链接啊，点击啊什么的都变成了浮云。*/
+            pointer-events: none;
+        }
+        li { display: inline-block;}
+        li { margin: 10px 0;}
+        input.labelauty + label { font: 12px "STSong";}
+    </style>
+<body>
+<!-- header -->
+	<div class="w3_navigation">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="homepage.html"> Travelling </a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--iris">
+						<ul class="nav navbar-nav menu__list">
+							<li class="menu__item"><a href="homepage.html" class="menu__link"> 首页 </a></li>
+							<li class="menu__item menu__item--current"><a href="citypage.html" class="menu__link"> 城市详情 </a></li>
+                                                        <li class="menu__item"><a href="mappage.html" class="menu__link"> 路线规划 </a></li>
+							<li class="menu__item"><a href="buy.html" class="menu__link"> 购票渠道 </a></li>
+						</ul>      
+					</nav>   
+				</div>    
+			</nav>
+                    <div style="width:100%; height:2px; border-top:1px solid #cccccc; clear:both;"></div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- banner -->
+<div class="city">
+            <div class="city-in">
+                <div class="citybegin" style="margin-left:3%">
+                <div class="linecity2">
+                    &nbsp;&nbsp;&nbsp;北京市：
+                            <li><a href="beijing.html"> 北京 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;天津市：
+                            <li><a href="tianjin.html"> 天津 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;河北省：
+                            <li><a href="shijiazhuang.html"> 石家庄 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;山西省：
+                            <li><a href="taiyuan.html"> 太原 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;河南省：
+                            <li><a href="zhengzhou.html"> 郑州 </a></li><br><br>
+                </div>
+                <div class="linecity">
+                    &nbsp;&nbsp;&nbsp;辽宁省：
+                           <li><a href="shenyang.html"> 沈阳 </a></li>
+                            <li><a href="dalian.html"> 大连 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;吉林省：
+                            <li><a href="changchun.html"> 长春 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;山东省：
+                           <li><a href="qingdao.html"> 青岛 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;上海市：
+                            <li><a href="shanghai.html"> 上海 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;江苏省：
+                           <li><a href="nanjing.html"> 南京 </a></li>
+                            <li><a href="suzhou.html"> 苏州 </a></li><br><br>
+                </div>
+                <div class="linecity1">
+                    &nbsp;&nbsp;&nbsp;浙江省：
+                            <li><a href="hangzhou.html"> 杭州 </a></li>
+                            <li><a href="ningbo.html"> 宁波 </a></li>
+                            <li><a href="wenzhou.html"> 温州 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;安徽省：
+                            <li><a href="hefei.html"> 合肥 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;福建省：
+                            <li><a href="xiamen.html"> 厦门 </a></li>
+                            <li><a href="fuzhou.html"> 福州 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;江西省：
+                            <li><a href="nanchang.html"> 南昌 </a></li>
+                            <li><a href="shangrao.html"> 上饶 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;黑龙江省：
+                            <li><a href="haerbin.html"> 哈尔滨 </a></li><br><br>
+                </div>
+                <div class="linecity1">
+                    &nbsp;&nbsp;&nbsp;内蒙古自治区：
+                            <li><a href="wulanhaote.html"> 乌兰浩特 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;湖北省：
+                            <li><a href="wuhan.html"> 武汉 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;湖南省：
+                            <li><a href="changsha.html"> 长沙 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;广东省：
+                            <li><a href="guangzhou.html"> 广州 </a></li>
+                            <li><a href="zhuhai.html"> 珠海 </a></li>
+                            <li><a href="shenzhen.html"> 深圳 </a></li>
+                            <li><a href="taizhou.html"> 台州 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;海南省：
+                            <li><a href="haikou.html"> 海口 </a></li>
+                            <li><a href="sanya.html"> 三亚 </a><br></li><br>
+                </div>
+                <div class="linecity">
+                    &nbsp;&nbsp;&nbsp;重庆市：
+                            <li><a href="chongqing.html"> 重庆 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;四川省：
+                            <li><a href="chengdu.html"> 成都 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;贵州省：
+                            <li><a href="guiyang.html"> 贵阳 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;云南省：
+                            <li><a href="kunming.html"> 昆明 </a></li>
+                            <li><a href="lijiang.html"> 丽江 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;陕西省：
+                            <li><a href="xian.html"> 西安 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;甘肃省：
+                            <li><a href="dunhuang.html"> 敦煌 </a></li><br>
+                </div>
+                <div class="linecity1">
+                    &nbsp;&nbsp;&nbsp;青海省：
+                            <li><a href="xining.html"> 西宁 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;特别行政区：
+                            <li><a href="xianggang.html"> 香港 </a></li>
+                            <li><a href="aomen.html"> 澳门 </a></li>
+                            <li><a href="taibei.html"> 台北 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;新疆自治区：
+                            <li><a href="wulumuqi.html"> 乌鲁木齐 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;宁夏自治区：
+                            <li><a href="yinchuan.html"> 银川 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;西藏自治区：
+                            <li><a href="lasa.html"> 拉萨 </a></li><br>
+                    &nbsp;&nbsp;&nbsp;广西壮族自治区：
+                            <li><a href="guilin.html"> 桂林 </a></li><br>
+                </div>
+            </div> 
+        </div>
+    <br>
+<div class="banner-1" style="width: 1140px;height:400px ;margin-left: 17.4%; background: url(images/台北1.png);">
+</div>
+    <div class="about">
+		<div class="container">
+			<div class="about-grids">
+                            <div class="col-md-5 wthree-about-left" style="height:300px">
+					<div class="wthree-about-left-info">
+						<img src="images/台北2.png" alt="" />
+					</div>
+				</div>
+				<div class="col-md-7 agileits-about-right">
+					<h5>台北是台湾省省会。位于台湾岛北部的台北盆地，被新北市环绕，西界淡水河及其支流新店溪，东至南港附近，南至木栅以南丘陵区，北包大屯山东南麓。台北是台湾省的六个“直辖市”之一，也是台湾省 的政治、经济、文化、旅游、工业、商业与传播中心，仅次于新北市的台湾第二大城市。</h5>
+					<p> 如果你知道程又青，看过沈佳宜，看过康熙来了，想来追逐台北在偶像剧里的那种清新风，或只想在夜市大餐一顿，或者是体验一下诚品书店的文艺不打烊。总之，翻开这里的每一页，你都能看到一个不一样的台北。
+					<span>台北市是台湾北部的游览中心，除阳明山、北投风景区外，还有岛内最大、建成最早占地8.9万平方米的台北公园和规模最大的木栅动物园。此外，由私人经营的荣星花园规模也相当可观。剑潭、北安、福寿、双溪等公园，也都是游览的好地方。台北市名胜古迹颇多，其中台北城门、龙山寺、保安宫、孔庙、指南宫、圆山文化遗址等处，均为风景优美，适宜游览的好地方。循着淡水河、基隆河迤逦蜿蜒，北边囊括大屯山系、七星山系而形成的阳明山公园，不但是自然保育的生态教室，更是大台北的后花园，四季各有不同风情韵致；坐落在台北市中心的二二八和平公园、植物园、大安森林公园，则堪为典型的城市绿洲，加上周遭人文、艺术活动频繁，是都市人纾解身心的好去处。南区的木栅山区，登山健行之外，还可享受茶香四溢的品茗闲情。台北市也拥有为数可观的博物馆、美术馆、纪念馆、庙宇、古迹等。外双溪的故宫博物院是岛内外首屈一指的艺术宝库，对街而立的顺益台湾原住民博物馆，展现原住民文化样貌；圆山周边的台北市立美术馆、儿童育乐中心、大龙峒保安宫、台北孔庙、行天宫，刻划着浓厚的人文活动轨迹。大稻埕和艋甲是汇聚台北移民血汗的历史街区，其中迪化街、霞海城隍庙、龙山寺、华西街，是想要了解老台北不可不到之处。寸土寸金的台北都会，西门町、东区、天母、士林、公馆等商圈林立，家具街、书店街、电脑街、婚纱街、花市、玉市等各种专卖街、市集，也是大都会细致分工下的产物。而街头巷尾一家家咖啡厅、泡沫红茶店、KTV、卡拉OK、PUB，华灯初上后，闪烁的霓虹妆点出不夜城的景象，让台北的夜晚展现另种风情。台北市治辖幅员虽与台湾其他县市比起来不算宽广，却拥有许多人文景观，也存在着有别于其他国际城市的特殊风情。</span>
+					</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

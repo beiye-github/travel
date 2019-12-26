@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Form by Tooplate</title>
+	
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="css/1bootstrap.min.css">
+    <link rel="stylesheet" href="css/1materialize.min.css">
+    <link rel="stylesheet" href="css/1tooplate.css">
+  
+</head>
+
+<body id="login">
+    <img src="img/logo.png" width="165" height="40" /> 
+    <div class="container">
+        <div class="row tm-register-row tm-mb-35">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 tm-login-l">
+                <form action="loginCheck.jsp" method="post" class="tm-bg-black p-5 h-100">
+                    <div class="input-field">
+                        <input placeholder="在此输入用户名" id="name" name="name" type="text" class="validate" required>
+                    </div>
+                    <div class="input-field mb-5">
+                        <input placeholder="在此输入密码" id="password" name="password" type="password" class="validate" required>
+                    </div>
+                    <div class="tm-flex-lr">
+                        <a href="index.html" class="white-text small">返回首页</a>
+                        <button type="submit" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">登录</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 tm-login-r">
+                <header class="font-weight-light tm-bg-black p-5 h-100">
+                    <h3 class="mt-0 text-white font-weight-light">欢迎使用</h3>
+                    <p>从这里登录，开启美好的体验。</p>
+                    <p class="mb-0">旅行就是，离开自以为是的生活，串联起以前的回忆，并以开放的态度结识，日常生活之外的有趣之人，至于风景，那只是附赠品。<br>——陈宇欣《我就是想停下来，看看这个世界》</p>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ml-auto mr-0 text-center">
+                <a href="signup.html" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">点此创建新的账户</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+</body>
+
+</html>

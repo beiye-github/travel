@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="css/1bootstrap.min.css">
+    <link rel="stylesheet" href="css/1materialize.min.css">
+    <link rel="stylesheet" href="css/1tooplate.css">
+
+</head>
+<body id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <header class="mb-5">
+                    <h3 class="mt-0 white-text">欢迎注册</h3>
+                    <p class="grey-text mb-4">注册成为我们的会员，可以免费使用我们的全部功能，开启美好体验！</p>
+                    <p class="grey-text">期待与您相伴的日子</p>
+                </header>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <form action="registerch.jsp" onsubmit="return zcheck()" method="post" class="tm-signup-form" name="zcForm">
+                    <div class="input-field">
+                        <input placeholder="账号(请输入6位以内)" id="username" name="username" type="text" maxlength="6" class="validate" required>
+                    </div>
+                    <div>
+                                <label class="mr-4">
+                                    <input class="with-gap" name="gender" type="radio" value="男" checked="" />
+                                    <span>男</span>
+                                </label>
+                                <label>
+                                    <input class="with-gap" name="gender" type="radio" value="女" />
+                                    <span>女</span>
+                                </label>
+                            </div>
+                    <div>
+                        <select name="city">
+                            <option name="city" value="福建省">福建省</option>
+                            <option name="city" value="北京市">北京市</option>
+                            <option name="city" value="天津市">天津市</option>
+                            <option name="city" value="上海市">上海市</option>
+                            <option name="city" value="重庆市">重庆市</option>
+                            <option name="city" value="河北省">河北省</option>
+                            <option name="city" value="河南省">河南省</option>
+                            <option name="city" value="云南省">云南省</option>
+                            <option name="city" value="辽宁省">辽宁省</option>
+                            <option name="city" value="黑龙江省">黑龙江省</option>
+                            <option name="city" value="湖南省">湖南省</option>
+                            <option name="city" value="安徽省">安徽省</option>
+                            <option name="city" value="山东省">山东省</option>
+                            <option name="city" value="新疆省">新疆省</option>
+                            <option name="city" value="浙江省">浙江省</option>
+                            <option name="city" value="江西省">江西省</option>
+                            <option name="city" value="湖北省">湖北省</option>
+                            <option name="city" value="广西省">广西省</option>
+                            <option name="city" value="甘肃省">甘肃省</option>
+                            <option name="city" value="山西省">山西省</option>
+                            <option name="city" value="内蒙古">内蒙古</option>
+                            <option name="city" value="陕西省">陕西省</option>
+                            <option name="city" value="吉林省">吉林省</option>
+                            <option name="city" value="贵州省">贵州省</option>
+                            <option name="city" value="广东省">广东省</option>
+                            <option name="city" value="青海省">青海省</option>
+                            <option name="city" value="西藏">西藏</option>
+                            <option name="city" value="四川省">四川省</option>
+                            <option name="city" value="宁夏">宁夏</option>
+                            <option name="city" value="海南省">海南省</option>
+                            <option name="city" value="台湾省">台湾省</option>
+                            <option name="city" value="香港">香港</option>
+                            <option name="city" value="澳门">澳门</option>                     
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <input placeholder="请输入十位以内密码" id="password" name="password" maxlength="10" type="password" class="validate" required>
+                    </div>
+                    <div class="input-field">
+                        <input placeholder="确认密码" id="password2" name="password2" maxlength="10" type="password" class="validate" required>
+                    </div>
+                    
+                    <div class="text-right mt-4">
+                        <button type="submit" class="waves-effect btn-large btn-large-white px-4 tm-border-radius-0">注册</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+    <script>
+    function zcheck()
+    {   
+        if(!/^\d{5}$.test(document.zcForm.username.value)) 
+       {
+            alert("您输入数字的位数不对"); 
+            document.zcForm.username.focus();
+            return false; 
+        } 
+        if(document.zcForm.city.value=="-")
+       {
+          alert("请选择居住城市");
+          document.zcForm.city.focus();
+          return false;
+       }
+       if(document.zcForm.password.value!=document.zcForm.password2.value)
+       {
+          alert("确认密码和密码不符");
+          document.zcForm.password2.focus();
+          return false;
+       }
+       return true;
+    }
+    </script>
+</body>
+
+</html>
